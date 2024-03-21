@@ -38,7 +38,7 @@ const Inventory = () => {
       {view === "listView" ? (
         <Row style={{ display: "flex", margin: "auto", overflow: "scroll" }}>
           {data.map((element) => (
-            <Col id={element.id}>
+            <Col key={element.id}>
               <Card element={element} />
             </Col>
           ))}

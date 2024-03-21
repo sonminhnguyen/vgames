@@ -1,6 +1,5 @@
 import React from "react";
 import "./App.css";
-import CogIcon from "@rsuite/icons/legacy/Cog";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import { Navbar, Nav } from "rsuite";
 import { CustomProvider } from "rsuite";
@@ -17,9 +16,6 @@ function App() {
           <Nav>
             <Nav.Item href="/mintnft">Mint NFT</Nav.Item>
             <Nav.Item href="/inventory">Inventory</Nav.Item>
-          </Nav>
-          <Nav pullRight>
-            <Nav.Item icon={<CogIcon />}>Settings</Nav.Item>
           </Nav>
         </Navbar>
         <Routes>
