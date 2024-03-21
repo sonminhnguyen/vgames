@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import CogIcon from "@rsuite/icons/legacy/Cog";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
+import { Navbar, Nav } from "rsuite";
+import { CustomProvider } from "rsuite";
+import MintNFT from "./mintnft/mintnft";
+import Inventory from "./inventory/inventory";
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <CustomProvider theme="dark">
+        <Navbar>
+          <Navbar.Brand href="#">MY PAGE</Navbar.Brand>
+          <Nav>
+            <Nav.Item href="/mintnft">Mint NFT</Nav.Item>
+            <Nav.Item href="/inventory">Inventory</Nav.Item>
+          </Nav>
+          <Nav pullRight>
+            <Nav.Item icon={<CogIcon />}>Settings</Nav.Item>
+          </Nav>
+        </Navbar>
+        <Routes>
+          <Route path="/mintnft" element={<MintNFT />} />
+          <Route path="/inventory" element={<Inventory />} />
+        </Routes>
+
+      </CustomProvider>
+    </BrowserRouter>
   );
 }
 

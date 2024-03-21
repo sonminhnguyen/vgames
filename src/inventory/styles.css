@@ -1,0 +1,16 @@
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: small;
+}
+.card-header-rarity {
+  float: "right";
+  margin: 0;
+  padding: 2px;
+  border: 1px solid white;
+}
+
+.card-content {
+    margin: 10px 0;
+}
